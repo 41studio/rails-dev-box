@@ -59,33 +59,9 @@ Port 3000 in the host computer is forwarded to port 3000 in the virtual machine.
 
 * An ExecJS runtime
 
-## Recommended Workflow
+## Workflow
 
-The recommended workflow is
-
-* edit in the host computer and
-
-* test within the virtual machine.
-
-Just clone your Rails fork into the rails-dev-box directory on the host computer:
-
-    host $ ls
-    bootstrap.sh MIT-LICENSE README.md Vagrantfile
-    host $ git clone git@github.com:<your username>/rails.git
-
-Vagrant mounts that directory as _/vagrant_ within the virtual machine:
-
-    vagrant@rails-dev-box:~$ ls /vagrant
-    bootstrap.sh MIT-LICENSE rails README.md Vagrantfile
-
-Install gem dependencies in there:
-
-    vagrant@rails-dev-box:~$ cd /vagrant/rails
-    vagrant@rails-dev-box:/vagrant/rails$ bundle
-
-We are ready to go to edit in the host, and test in the virtual machine.
-
-This workflow is convenient because in the host computer you normally have your editor of choice fine-tuned, Git configured, and SSH keys in place.
+When you connect to vagrant, all development tool above will availabe to use. You can access the host folder with change to /vagrant directory or based your setting on file bootstrap.sh. 
 
 ## Virtual Machine Management
 
@@ -155,6 +131,14 @@ Then
     host $ vagrant up
 
 Please check the Vagrant documentation on [NFS synced folders](http://docs.vagrantup.com/v2/synced-folders/nfs.html) for more information.
+
+## Troubleshooting
+
+    Error - Peer authentication failed for user "postgres"
+
+When you got this error when create or migrate database command, you need modify your pg_hba.conf file.
+Please change method of postgres user from "peer" to "trust"
+
 
 ## License
 
