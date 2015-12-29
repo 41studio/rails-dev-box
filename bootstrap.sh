@@ -12,7 +12,7 @@ apt-get -y update >/dev/null 2>&1
 
 install 'development tools' build-essential
 install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev zlib1g-dev
-# install 'Java' default-jre default-jdk
+install 'Java' default-jre default-jdk
 install 'ExecJS runtime' nodejs
 
 install Ruby ruby2.2 ruby2.2-dev
@@ -27,7 +27,7 @@ gem install rails --no-ri --no-rdoc
 
 install Git git
 install SQLite sqlite3 libsqlite3-dev
-#install memcached memcached
+install Memcached memcached
 install Redis redis-server
 install ImageMagick imagemagick
 
@@ -37,11 +37,11 @@ sudo -u postgres createdb -O vagrant activerecord_unittest
 sudo -u postgres createdb -O vagrant activerecord_unittest2
 sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'postgres';"
 
-#echo installing Elasticsearch
-#wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.5.2.deb
-#sudo dpkg -i elasticsearch-1.5.2.deb
-#sudo update-rc.d elasticsearch defaults 95 10
-#sudo /etc/init.d/elasticsearch start
+echo installing Elasticsearch
+wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.5.2.deb
+sudo dpkg -i elasticsearch-1.5.2.deb
+sudo update-rc.d elasticsearch defaults 95 10
+sudo /etc/init.d/elasticsearch start
 
 # Setup my sql
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
