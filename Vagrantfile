@@ -12,6 +12,7 @@ Vagrant.configure('2') do |config|
     v.memory = 1024
   end
 
+  ## This is for linux and Mac users only. See more (http://docs.vagrantup.com/v2/synced-folders/nfs.html)
   ## '~' mean it will add all your directory of current user. Feel free for modify
   config.vm.synced_folder "~", "/vagrant", :nfs => true
 end
