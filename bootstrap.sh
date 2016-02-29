@@ -29,7 +29,7 @@ install Git git
 install SQLite sqlite3 libsqlite3-dev
 install Memcached memcached
 install Redis redis-server
-install ImageMagick imagemagick
+install ImageMagick imagemagick libmagickwand-dev
 
 install PostgreSQL postgresql postgresql-contrib libpq-dev
 sudo -u postgres createuser --superuser vagrant
@@ -43,7 +43,7 @@ sudo dpkg -i elasticsearch-1.5.2.deb
 sudo update-rc.d elasticsearch defaults 95 10
 sudo /etc/init.d/elasticsearch start
 
-# Setup my sql
+#Setup my sql
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 install MySQL mysql-server libmysqlclient-dev
