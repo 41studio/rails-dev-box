@@ -9,7 +9,7 @@ Vagrant.configure('2') do |config|
 
   ## feel free modify it base on your computer
   config.vm.provider "virtualbox" do |v|
-    v.memory = 1024
+    v.memory = 2024
   end
 
   ## This is for linux and Mac users only. See more (http://docs.vagrantup.com/v2/synced-folders/nfs.html)
