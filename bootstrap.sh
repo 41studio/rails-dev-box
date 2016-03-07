@@ -14,6 +14,7 @@ install 'development tools' build-essential
 install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev zlib1g-dev
 install 'Java' default-jre default-jdk
 install 'ExecJS runtime' nodejs
+install 'Node package manager' npm
 
 install Ruby ruby2.2 ruby2.2-dev
 update-alternatives --set ruby /usr/bin/ruby2.2 >/dev/null 2>&1
